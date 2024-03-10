@@ -30,9 +30,9 @@
             </div>
             <button type="submit">Ingresar</button>
         </form>
-        <!--  <% if (request.getParameter("error") != null && request.getParameter("error").equals("true")) { %>
+        <% if (request.getParameter("error") != null && request.getParameter("error").equals("true")) { %>
             <div class="error-message">Usuario o contrasena incorrectos</div>
-        <% } %> -->
+        <% } %>
     </div>
   </body>
 </html>
