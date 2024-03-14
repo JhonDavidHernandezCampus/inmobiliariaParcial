@@ -32,7 +32,7 @@ if (session != null && session.getAttribute("usuario") != null) {
                 String rol = (String) session.getAttribute("rol");
                 if("admin".equals(rol)){ %>
                     <li><a href="./listadoClientes.jsp">Clientes</a></li>
-                    <li><a href="./agregarImueble.jsp">Inmuebles</a></li>
+                    <li><a href="./listadoImuebles.jsp">Inmuebles</a></li>
                 <% }
                 %>
             </ul>
@@ -41,17 +41,17 @@ if (session != null && session.getAttribute("usuario") != null) {
             String usuario = (String) session.getAttribute("usuario");
             String nombreCompleto = (String) session.getAttribute("nombreCompleto");
             %>
-                <span><%=usuario %></span>
-                <span><%=nombreCompleto %></span>
-            
+                <div style="display: flex; flex-direction: column;">
+                    <span><%=usuario %></span>
+                    <span><%=nombreCompleto %></span>
+                </div>
+              <a href="./cerrarSesion.jsp"><img src="./../img/cerrarSession.png" width="30px" height="30px"></img></a>
             </div>
         </nav>
     </header>
     <div class="container">
     <%
 	
-        out.println(usuario);
-
         Connection conexion = null;
         PreparedStatement ps = null;
         ResultSet rs=null;
@@ -126,10 +126,7 @@ if (session != null && session.getAttribute("usuario") != null) {
                 </form>
                </div>
                 <%
-                }
-                %>
-                 <button type="submit">Guardar Cambios</button>
-                 <%     
+                }   
 
         	} catch (ClassNotFoundException e) {
         		out.println("Error en la carga del driver"

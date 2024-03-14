@@ -1,4 +1,174 @@
 body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #007bff;
+  padding: 10px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+.available {
+  color: green;
+}
+
+.occupied {
+  color: red;
+}
+
+.ocupado {
+  background-color: coral;
+  color: black;
+}
+.disponible {
+  background-color: greenyellow;
+  color: black;
+}
+
+nav .user-info {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 10px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn-agregar,
+.btn-editar,
+.btn-eliminar {
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-agregar {
+  background-color: #4caf50;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.btn-agregar a {
+  background-color: #4caf50;
+  color: black;
+}
+.btn-editar {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-eliminar {
+  background-color: #f44336; 
+  color: white;
+}
+
+
+.btn-agregar:hover,
+.btn-editar:hover,
+.btn-eliminar:hover {
+  background-color: #45a049; 
+}
+
+
+.btn-agregar:active,
+.btn-editar:active,
+.btn-eliminar:active {
+  background-color: #367d36; 
+}
+
+
+.container {
+    margin: 20px;
+}
+
+form {
+  margin-top: 10px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+
+body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -78,4 +248,13 @@ nav .user-info {
 
 nav .user-info span {
     margin-left: 10px;
+}
+
+
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    flex-direction: column;
 }
