@@ -2,6 +2,7 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.SQLException" %>
+<%@ page import="javax.servlet.http.HttpSession" %>
 <%@ page import="java.sql.*" %>
 <%
 
@@ -30,8 +31,17 @@ try {
     rs = ps.executeQuery();
 
     // response.sendRedirect("mostrar.jsp");
-    if(rs.next()){ // <- como puedo hacer esta validacion?
-        response.sendRedirect("dashboar.jsp");
+    if(rs.next()){
+        session = request.getSession(true);
+        String nombre = rs.getString("pnombre_cli");
+        String appellido = rs.getString("papellido_cli");
+        String rol = rs.getString("rol");
+
+        session.setAttribute("usuario", usuario);
+        session.setAttribute("nombreCompleto", ""+nombre+""+""+appellido+"");
+        session.setAttribute("rol", rol);
+
+        response.sendRedirect("./../../components/dashboard.jsp");
     }else{
         response.sendRedirect("./../../index.jsp?error=true");
     }
